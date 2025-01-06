@@ -31,7 +31,7 @@ server:
       - prometheus.kubash.org
     path: /
     pathType: Prefix
-    tls: []
+    tls:
       - secretName: prometheus-kubash-tls
         hosts:
           - prometheus.kubash.org
