@@ -1,0 +1,3 @@
+[submodule "helm-openldap"]
+	path = helm-openldap
+	url = https://github.com/joshuacox/helm-openldap
