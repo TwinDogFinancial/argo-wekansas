@@ -1,0 +1,61 @@
+configmapReload:
+  ## URL for configmap-reload to use for reloads
+  ##
+  reloadUrl: ""
+  ## env sets environment variables to pass to the container. Can be set as name/value pairs,
+  ## read from secrets or configmaps.
+  env: []
+    # - name: SOMEVAR
+    #   value: somevalue
+    # - name: PASSWORD
+    #   valueFrom:
+    #     secretKeyRef:
+    #       name: mysecret
+    #       key: password
+    #       optional: false
+  prometheus:
+    enabled: true
+    name: configmap-reload
+server:
+  name: server
+  baseURL: "prometheus.kubash.org"
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      traefik.ingress.kubernetes.io/router.middlewares: twindog-redirect-https@kubernetescrd
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      spec.ingressClassName: traefik
+    hosts:
+      - prometheus.kubash.org
+    path: /
+    pathType: Prefix
+    tls: []
+      - secretName: prometheus-kubash-tls
+        hosts:
+          - prometheus.kubash.org
+  persistentVolume:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    mountPath: /data
+    size: 18Gi
+    storageClass: "openebs-lvmpv"
+  replicaCount: 1
+  ## Number of old history to retain to allow rollback
+  ## Default Kubernetes value is set to 10
+  ##
+  revisionHistoryLimit: 10
+  tcpSocketProbeEnabled: false
+  probeScheme: HTTP
+  readinessProbeInitialDelay: 30
+  readinessProbePeriodSeconds: 5
+  readinessProbeTimeout: 4
+  readinessProbeFailureThreshold: 3
+  readinessProbeSuccessThreshold: 1
+  livenessProbeInitialDelay: 30
+  livenessProbePeriodSeconds: 15
+  livenessProbeTimeout: 10
+  livenessProbeFailureThreshold: 3
+  livenessProbeSuccessThreshold: 1
