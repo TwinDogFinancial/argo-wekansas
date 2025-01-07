@@ -428,8 +428,8 @@ alertmanager:
     ## TLS configuration for Alertmanager Ingress
     ## Secret must be manually created in the namespace
     ##
-    tls: []
-      - secretName: alertmanager-general-tls
+    tls:
+      - secretName: alertmanager-twindog-general-tls
         hosts:
         - alertmanager.kubash.org
 
@@ -1074,7 +1074,7 @@ grafana:
     ## Secret must be manually created in the namespace
     ##
     tls:
-      - secretName: grafana-general-tls
+      - secretName: grafana-twindog-general-tls
         hosts:
         - grafana.twindogfinancial.com
 
@@ -3413,8 +3413,8 @@ prometheus:
     ## TLS configuration for Prometheus Ingress
     ## Secret must be manually created in the namespace
     ##
-    tls: []
-      - secretName: prometheus-general-tls
+    tls:
+      - secretName: prometheus-twindog-general-tls
         hosts:
           - prometheus.twindogfinancial.com
 
