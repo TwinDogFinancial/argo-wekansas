@@ -294,7 +294,7 @@ ingress:
   pathType: Prefix
 
   hosts:
-    - grafana.kubash.org
+    - grafana.twindogfinancial.com
   ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
   extraPaths: []
   # - path: /*
@@ -312,9 +312,9 @@ ingress:
 
 
   tls: []
-    - secretName: grafana-kubash-org-tls
+    - secretName: grafana-twindogfinancial-com-tls
       hosts:
-        - grafana.kubash.org
+        - grafana.twindogfinancial.com
 
 # -- BETA: Configure the gateway routes for the chart here.
 # More routes can be added by adding a dictionary key like the 'main' route.
