@@ -699,10 +699,10 @@ server:
   ## Security context to be added to server pods
   ##
   securityContext:
-    runAsUser: 0
+    runAsUser: 65534
     runAsNonRoot: true
-    runAsGroup: 0
-    fsGroup: 0
+    runAsGroup: 65534
+    fsGroup: 65534
 
   ## Security context to be added to server container
   ##
@@ -1274,10 +1274,10 @@ alertmanager:
     size: 2Gi
 
   podSecurityContext:
-    runAsUser: 0
+    runAsUser: 65534
     runAsNonRoot: true
-    runAsGroup: 0
-    fsGroup: 0
+    runAsGroup: 65534
+    fsGroup: 65534
 
 ## kube-state-metrics sub-chart configurable values
 ## Please see https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-state-metrics
