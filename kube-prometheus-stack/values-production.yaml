@@ -414,7 +414,7 @@ alertmanager:
     ## Hosts must be provided if Ingress is enabled.
     ##
     hosts:
-      - alertmanager.kubash.org
+      - alertmanager.twindogfinancial.com
 
     ## Paths to use for ingress rules - one path should match the alertmanagerSpec.routePrefix
     ##
@@ -431,7 +431,7 @@ alertmanager:
     tls:
       - secretName: alertmanager-twindog-general-tls
         hosts:
-        - alertmanager.kubash.org
+        - alertmanager.twindogfinancial.com
 
   # -- BETA: Configure the gateway routes for the chart here.
   # More routes can be added by adding a dictionary key like the 'main' route.
@@ -822,7 +822,7 @@ alertmanager:
 
     ## The external URL the Alertmanager instances will be available under. This is necessary to generate correct URLs. This is necessary if Alertmanager is not served from root of a DNS name. string  false
     ##
-    externalUrl: https://alertmanager.kubash.org
+    externalUrl: https://alertmanager.twindogfinancial.com
 
     ## The route prefix Alertmanager registers HTTP handlers for. This is useful, if using ExternalURL and a proxy is rewriting HTTP routes of a request, and the actual ExternalURL is still true,
     ## but the server serves requests under a different route prefix. For example for use with kubectl proxy.
