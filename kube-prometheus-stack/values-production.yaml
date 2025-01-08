@@ -400,6 +400,7 @@ alertmanager:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
       traefik.ingress.kubernetes.io/router.middlewares: twindog-redirect-https@kubernetescrd
+      traefik.ingress.kubernetes.io/router.middlewares: monitoring-prometheus-auth@kubernetescrd
       cert-manager.io/cluster-issuer: letsencrypt-production
       spec.ingressClassName: traefik
 
