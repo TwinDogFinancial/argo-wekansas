@@ -3390,6 +3390,8 @@ prometheus:
       traefik.ingress.kubernetes.io/router.middlewares: twindog-redirect-https@kubernetescrd
       cert-manager.io/cluster-issuer: letsencrypt-production
       spec.ingressClassName: traefik
+      traefik.ingress.kubernetes.io/router.middlewares: monitoring-prometheus-auth@kubernetescrd
+
     labels: {}
 
     ## Redirect ingress to an additional defined port on the service
