@@ -399,7 +399,7 @@ alertmanager:
 
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
-      traefik.ingress.kubernetes.io/router.middlewares: twindog-redirect-https@kubernetescrd
+      traefik.ingress.kubernetes.io/router.middlewares: monitoring-redirect-https@kubernetescrd
       traefik.ingress.kubernetes.io/router.middlewares: monitoring-prometheus-auth@kubernetescrd
       cert-manager.io/cluster-issuer: letsencrypt-production
       spec.ingressClassName: traefik
@@ -1052,7 +1052,7 @@ grafana:
     ##
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
-      traefik.ingress.kubernetes.io/router.middlewares: twindog-redirect-https@kubernetescrd
+      traefik.ingress.kubernetes.io/router.middlewares: monitoring-redirect-https@kubernetescrd
       cert-manager.io/cluster-issuer: letsencrypt-production
       spec.ingressClassName: traefik
       # kubernetes.io/ingress.class: nginx
@@ -3388,7 +3388,7 @@ prometheus:
 
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /
-      traefik.ingress.kubernetes.io/router.middlewares: twindog-redirect-https@kubernetescrd
+      traefik.ingress.kubernetes.io/router.middlewares: monitoring-redirect-https@kubernetescrd
       cert-manager.io/cluster-issuer: letsencrypt-production
       spec.ingressClassName: traefik
       traefik.ingress.kubernetes.io/router.middlewares: monitoring-prometheus-auth@kubernetescrd
